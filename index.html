@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caue Moyano - Web Developer</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/0256e30af5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="border-black flex" id="nav">
+        <div class="logo-div flex">
+          <img src="./src/images/CM-logo.png" alt="logo" />
+        </div>
+        <div class="burger-menu flex">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#">CV</a></li>
+        </ul>
+        <div class="switcher flex">
+          <i class="fas fa-moon"></i>
+        </div>
+      </nav>
+      <main>
+        <section class="home flex border-black" id="home">
+          <article class="flex">
+            <div class="content flex">
+              <h1>
+                Hello, I’m Caue Moyano, a Web Developer and UX/UI Designer based
+                in the UK.
+              </h1>
+              <div class="btn"><a href="#projects">PROJECTS</a></div>
+            </div>
+            <div class="photo flex">
+              <img
+                src="./src/images/image-home-bg.png"
+                alt="image background"
+              />
+            </div>
+          </article>
+          <aside class="flex">
+            <ul>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/caue-garcia-moyano-758203142/"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://github.com/cauegarcia"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <section class="projects flex border-black" id="projects">
+          <article class="name flex" id="project-name">
+            <h1>Projects</h1>
+          </article>
+          <article class="content" id="project-content">
+            <div class="single-project flex" id="first-project">
+              <h2>RESA Electronics</h2>
+              <div class="description flex">
+                <img
+                  src="./src/images/resa-electronics.png"
+                  alt="Resa Electronics website image"
+                />
+                <div class="details flex">
+                  <p>
+                    An e-commerce website focused on selling second-hand
+                    electronic devices. It's a fictional company intented to
+                    make people aware of the importance of reusing and recycling
+                    trough the selling of high-quality used products.
+                  </p>
+                  <div class="link-wrapper flex">
+                    <a href="#" class="btn live-view">LIVE VIEW</a>
+                    <a href="#" class="btn code"
+                      >CODE <i class="fab fa-github"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="single-project flex">
+              <h2>Football Score</h2>
+              <div class="description flex">
+                <img
+                  src="./src/images/football-score.png"
+                  alt="Football Score website image"
+                />
+                <div class="details flex">
+                  <p>
+                    A web app that provides the latest results and scheduled
+                    football matches of the major european leagues. Also, basic
+                    information about teams and leagues can be accessed. The
+                    data is provided from an external API:
+                    https://www.football-data.org/.
+                  </p>
+                  <div class="link-wrapper flex">
+                    <a href="#" class="btn live-view">LIVE VIEW</a>
+                    <a href="#" class="btn code"
+                      >CODE <i class="fab fa-github"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="single-project flex" id="last-project">
+              <h2>Maple Bear Adventures</h2>
+              <div class="description flex">
+                <img
+                  src="./src/images/maple-bear.png"
+                  alt="Maple Bear Adventures website image"
+                />
+                <div class="details flex">
+                  <p>
+                    It is a website for a fictional adventure agency which
+                    offers outdoor activities. The website provides
+                    interactivity to display the possibilities at the first
+                    glance.
+                  </p>
+                  <div class="link-wrapper flex">
+                    <a href="#" class="btn live-view">LIVE VIEW</a>
+                    <a href="#" class="btn code"
+                      >CODE <i class="fab fa-github"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section class="about flex border-black" id="about"></section>
+      </main>
+    </div>
+    <script src="./dist/main.js"></script>
+  </body>
+</html>
