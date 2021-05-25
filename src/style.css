@@ -150,8 +150,7 @@ h4 {
 
 @media (min-width: 1024px) and (orientation: landscape) {
   .btn {
-    width: 200px;
-    height: 55px;
+    width: 180px;
   }
 }
 
@@ -177,14 +176,13 @@ h4 {
 
 @media (min-width: 1024px) and (orientation: landscape) {
   .btn::before {
-    width: 200px;
-    height: 55px;
+    width: 180px;
     left: -10px;
     bottom: -10px;
   }
 }
 
-.fixed {
+.fixed-name {
   position: fixed;
   top: 10vh;
   left: 0;
@@ -194,23 +192,30 @@ h4 {
 }
 
 @media (min-width: 768px) {
-  .fixed {
+  .fixed-name {
     border-left: 10px solid #080808;
     border-right: 10px solid #080808;
   }
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
-  .fixed {
-    border-bottom: 10px solid #080808;
+  .fixed-name {
+    border-bottom: 10px solid #080808 !important;
   }
 }
 
-.absolute {
+.absolute-name {
   position: absolute;
   left: 0;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
+  bottom: 0;
+}
+
+.margin-bottom-auto {
+  margin-bottom: auto;
+}
+
+.margin-top-auto {
+  margin-top: auto;
 }
 
 .container {
@@ -473,8 +478,8 @@ h4 {
   font-size: 5vh;
 }
 
-.projects {
-  min-height: 100vh;
+.projects, .about {
+  min-height: 90vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -483,7 +488,7 @@ h4 {
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
-  .projects {
+  .projects, .about {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -491,11 +496,11 @@ h4 {
   }
 }
 
-.projects article {
+.projects article, .about article {
   width: 100%;
 }
 
-.projects .name {
+.projects .name, .about .name {
   border-bottom: 5px solid #080808;
   height: 25vh;
   background: #f3f0e7;
@@ -503,40 +508,41 @@ h4 {
 }
 
 @media (min-width: 768px) {
-  .projects .name {
+  .projects .name, .about .name {
     border-bottom: 10px solid #080808;
   }
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
-  .projects .name {
-    height: 100vh;
+  .projects .name, .about .name {
+    height: 90vh;
     width: 50%;
-    margin-bottom: auto;
     border-right: 10px solid #080808;
     border-bottom: none;
   }
 }
 
-.projects .content {
-  padding: 1rem;
+.projects .content, .about .content {
+  padding: 0 1rem;
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
-  .projects .content {
+  .projects .content, .about .content {
     width: 50%;
     padding-top: 5vh;
+    margin-left: auto;
   }
 }
 
-.projects .content .single-project {
+.projects .content .single-project, .about .content .single-project {
+  padding: 2vh 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-.projects .content .single-project .description {
+.projects .content .single-project .description, .about .content .single-project .description {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -544,7 +550,7 @@ h4 {
 }
 
 @media (min-width: 768px) {
-  .projects .content .single-project .description {
+  .projects .content .single-project .description, .about .content .single-project .description {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -559,7 +565,7 @@ h4 {
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
-  .projects .content .single-project .description {
+  .projects .content .single-project .description, .about .content .single-project .description {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -573,26 +579,26 @@ h4 {
   }
 }
 
-.projects .content .single-project .description img {
+.projects .content .single-project .description img, .about .content .single-project .description img {
   width: 80%;
   margin: 3vh 0 5vh;
 }
 
 @media (min-width: 768px) {
-  .projects .content .single-project .description img {
+  .projects .content .single-project .description img, .about .content .single-project .description img {
     width: 40%;
     margin: 0;
   }
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
-  .projects .content .single-project .description img {
+  .projects .content .single-project .description img, .about .content .single-project .description img {
     width: 80%;
     margin: 3vh 0 5vh;
   }
 }
 
-.projects .content .single-project .description .details {
+.projects .content .single-project .description .details, .about .content .single-project .description .details {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -600,29 +606,60 @@ h4 {
 }
 
 @media (min-width: 768px) {
-  .projects .content .single-project .description .details {
+  .projects .content .single-project .description .details, .about .content .single-project .description .details {
     width: 50%;
   }
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
-  .projects .content .single-project .description .details {
+  .projects .content .single-project .description .details, .about .content .single-project .description .details {
     width: 80%;
   }
 }
 
-.projects .content .single-project .description .details .link-wrapper {
+.projects .content .single-project .description .details .link-wrapper, .about .content .single-project .description .details .link-wrapper {
   width: 100%;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin: 3vh 0 7vh;
 }
 
-.projects .content .single-project .description .details .link-wrapper .live-view {
+.projects .content .single-project .description .details .link-wrapper .live-view, .about .content .single-project .description .details .link-wrapper .live-view {
   background: #69d2e7;
 }
 
-.projects .content .single-project .description .details .link-wrapper .code {
+.projects .content .single-project .description .details .link-wrapper .code, .about .content .single-project .description .details .link-wrapper .code {
   background: #f38630;
+}
+
+.about {
+  position: relative;
+}
+
+.about .portrait {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  z-index: 4;
+  width: 30vw;
+  height: calc(width * 1.4375);
+  border: 5px solid #080808;
+}
+
+.about .portrait img {
+  width: 100%;
+  height: 100%;
+}
+
+.about .content h3 {
+  margin-top: 2vh;
+}
+
+.about .content h3:first-child {
+  padding-top: 4vh;
+}
+
+.about .content p:last-child {
+  margin-bottom: 4vh;
 }
 /*# sourceMappingURL=style.css.map */

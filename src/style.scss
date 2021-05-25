@@ -138,8 +138,7 @@ h4 {
     height: 50px;
   }
   @include desktop {
-    width: 200px;
-    height: 55px;
+    width: 180px;
   }
 }
 .btn::before {
@@ -158,13 +157,12 @@ h4 {
     bottom: -10px;
   }
   @include desktop {
-    width: 200px;
-    height: 55px;
+    width: 180px;
     left: -10px;
     bottom: -10px;
   }
 }
-.fixed {
+.fixed-name {
   position: fixed;
   top: 10vh;
   left: 0;
@@ -176,13 +174,19 @@ h4 {
     border-right: 10px solid $dark-color;
   }
   @include desktop {
-    border-bottom: 10px solid $dark-color;
+    border-bottom: 10px solid $dark-color !important;
   }
 }
-.absolute {
+.absolute-name {
   position: absolute;
   left: 0;
-  transform: translateY(-100%);
+  bottom: 0;
+}
+.margin-bottom-auto {
+  margin-bottom: auto;
+}
+.margin-top-auto {
+  margin-top: auto;
 }
 
 //COntainer and Header
@@ -361,7 +365,7 @@ h4 {
 
 //Projects
 .projects {
-  min-height: 100vh;
+  min-height: 90vh;
   flex-direction: column;
   position: relative;
   @include desktop {
@@ -379,20 +383,21 @@ h4 {
       border-bottom: 10px solid $dark-color;
     }
     @include desktop {
-      height: 100vh;
+      height: 90vh;
       width: 50%;
-      margin-bottom: auto;
       border-right: 10px solid $dark-color;
       border-bottom: none;
     }
   }
   .content {
-    padding: 1rem;
+    padding: 0 1rem;
     @include desktop {
       width: 50%;
       padding-top: 5vh;
+      margin-left: auto;
     }
     .single-project {
+      padding: 2vh 0;
       flex-direction: column;
       .description {
         flex-direction: column;
@@ -441,6 +446,36 @@ h4 {
           }
         }
       }
+    }
+  }
+}
+
+//about
+.about {
+  @extend .projects;
+  position: relative;
+  .portrait {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    z-index: 4;
+    width: 30vw;
+    height: calc(#{width} * 1.4375);
+    border: 5px solid $dark-color;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .content {
+    h3 {
+      margin-top: 2vh;
+    }
+    h3:first-child {
+      padding-top: 4vh;
+    }
+    p:last-child {
+      margin-bottom: 4vh;
     }
   }
 }
