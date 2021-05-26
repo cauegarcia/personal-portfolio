@@ -163,7 +163,7 @@ h4 {
   }
 }
 .fixed-name {
-  position: fixed;
+  position: fixed !important;
   top: 10vh;
   left: 0;
   border-left: 5px solid $dark-color;
@@ -178,7 +178,7 @@ h4 {
   }
 }
 .absolute-name {
-  position: absolute;
+  position: absolute !important;
   left: 0;
   bottom: 0;
 }
@@ -381,6 +381,7 @@ h4 {
     z-index: 2;
     @include tablet {
       border-bottom: 10px solid $dark-color;
+      height: 35vh;
     }
     @include desktop {
       height: 90vh;
@@ -405,7 +406,7 @@ h4 {
           flex-direction: row;
           justify-content: space-around;
           align-items: flex-start;
-          margin: 5vh 0;
+          margin: 3vh 0;
         }
         @include desktop {
           flex-direction: column;
@@ -437,6 +438,9 @@ h4 {
             width: 100%;
             justify-content: space-around;
             margin: 3vh 0 7vh;
+            @include tablet {
+              margin: 3vh 0;
+            }
             .live-view {
               background: $blue-color;
             }
@@ -453,29 +457,64 @@ h4 {
 //about
 .about {
   @extend .projects;
-  position: relative;
-  .portrait {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    z-index: 4;
-    width: 30vw;
-    height: calc(#{width} * 1.4375);
-    border: 5px solid $dark-color;
-    img {
-      width: 100%;
-      height: 100%;
+  .name {
+    position: relative;
+    h1 {
+      margin-right: 20vw;
+      @include desktop {
+        margin-right: 0;
+      }
+    }
+    .portrait {
+      position: absolute;
+      bottom: -20%;
+      left: 60%;
+      z-index: 4;
+      width: 30vw;
+      height: calc(#{width} * 1.4375);
+      border: 5px solid $dark-color;
+      @include tablet {
+        border: 10px solid $dark-color;
+      }
+      @include desktop {
+        width: 20vw;
+        bottom: 50%;
+        left: 100%;
+        transform: translate(-60%, 50%);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
+
   .content {
+    @include tablet {
+      padding: 3vh 6vw;
+    }
+    @include desktop {
+      padding: 0 10vw;
+    }
     h3 {
       margin-top: 2vh;
+      @include tablet {
+        margin: 4vh 0 2vh;
+      }
     }
     h3:first-child {
       padding-top: 4vh;
+      @include tablet {
+        padding-top: 0;
+      }
     }
     p:last-child {
       margin-bottom: 4vh;
     }
   }
+}
+
+//contact
+.contact {
+  @extend .projects;
 }
