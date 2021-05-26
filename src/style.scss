@@ -136,9 +136,12 @@ h4 {
   @include tablet {
     width: 160px;
     height: 50px;
+    font-size: 1.2rem;
+    letter-spacing: 0.25rem;
   }
   @include desktop {
     width: 180px;
+    font-size: 1.5rem;
   }
 }
 .btn::before {
@@ -517,4 +520,80 @@ h4 {
 //contact
 .contact {
   @extend .projects;
+  .content {
+    padding: 4vh 1rem;
+
+    form {
+      @include tablet {
+        max-width: 50%;
+      }
+      @include desktop {
+        max-width: 60%;
+      }
+      .form-group {
+        position: relative;
+        padding: 3vh 0;
+      }
+      .form-label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        color: $dark-color;
+      }
+      .form-input,
+      .form-textarea {
+        font-family: inherit;
+        font-size: 1.2rem;
+        width: 100%;
+        border: 0;
+        outline: 0;
+        padding: 7px 0;
+        background: transparent;
+        transition: border-color 0.2s;
+        &::placeholder {
+          color: transparent;
+        }
+        &:placeholder-shown ~ .form-label {
+          cursor: text;
+          top: 4vh;
+        }
+      }
+      .form-input {
+        border-bottom: 2px solid $dark-color;
+      }
+
+      .form-input:focus,
+      .form-textarea:focus {
+        ~ .form-label {
+          position: absolute;
+          top: 0;
+          display: block;
+          transition: 0.2s;
+          font-size: 1rem;
+          color: $dark-color;
+          font-weight: 700;
+        }
+      }
+      .form-input:focus {
+        padding-bottom: 6px;
+        border-width: 3px;
+        border-image: linear-gradient(to right, $dark-color, $light-color);
+        border-image-slice: 1;
+      }
+      .form-input,
+      .form-textarea {
+        &:required,
+        &:invalid {
+          box-shadow: none;
+        }
+      }
+      .btn-send {
+        margin: 0 2vh;
+        font-family: inherit;
+        background: $orange-color;
+        cursor: pointer;
+      }
+    }
+  }
 }
