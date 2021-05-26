@@ -90,6 +90,7 @@ const setUpSettings = () => {
     }
   };
 
+  //handle section fixing
   window.addEventListener("scroll", () => {
     const intViewportHeight = window.innerHeight;
     const projectsTop = document
@@ -116,6 +117,19 @@ const setUpSettings = () => {
     ) {
       applyPositionOnSection("about");
     }
+  });
+
+  //handle form
+  const form = document.getElementById("contact-form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const message = document.getElementById("message");
+    console.log(name, email, message);
+    name.value = "";
+    email.value = "";
+    message.value = "";
   });
 };
 const initialize = (() => {

@@ -18,7 +18,7 @@
   <script defer src="main.js"></script></head>
   <body>
     <div class="container">
-      <nav class="border-black flex" id="nav">
+      <nav class="border-black flex nav-header" id="nav">
         <div class="logo-div flex">
           <img src="./src/images/CM-logo.png" alt="logo" />
         </div>
@@ -41,11 +41,15 @@
         <section class="home flex border-black" id="home">
           <article class="flex">
             <div class="content flex">
-              <h1>
-                Hello, I’m Caue Moyano, a Web Developer and UX/UI Designer based
-                in the UK.
+              <h1 class="presentation">
+                Hello,<br />
+                I’m <span>Caue Moyano</span>, a Web Developer and UX/UI Designer
+                based in the UK.
               </h1>
               <div class="btn"><a href="#projects">PROJECTS</a></div>
+              <div class="logo-home">
+                <img src="./src/images/CM-logo-brown.png" alt="logo" />
+              </div>
             </div>
             <div class="photo flex">
               <img
@@ -187,26 +191,24 @@
               Send me a message,<br />
               I will reply as soon as possible.
             </h3>
-            <form>
+            <form id="contact-form">
               <div class="form-group">
                 <input
-                  type="input"
+                  type="text"
                   class="form-input"
                   placeholder="Name"
                   name="name"
                   id="name"
-                  required
                 />
                 <label for="name" class="form-label">Name</label>
               </div>
               <div class="form-group">
                 <input
-                  type="input"
+                  type="email"
                   class="form-input"
                   placeholder="Email"
                   name="email"
                   id="email"
-                  required
                 />
                 <label for="email" class="form-label">Email</label>
               </div>
@@ -226,6 +228,34 @@
           </article>
         </section>
       </main>
+      <footer class="footer border-black">
+        <nav class="nav-footer flex">
+          <ul class="flex">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+        <div class="logo-footer">
+          <img src="./src/images/CM-logo-brown.png" alt="logo" />
+        </div>
+        <ul class="social-icons flex">
+          <li>
+            <a href="https://www.linkedin.com/in/caue-garcia-moyano-758203142/"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://github.com/cauegarcia"
+              ><i class="fab fa-github"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+          </li>
+        </ul>
+      </footer>
     </div>
     <script src="./dist/main.js"></script>
   </body>

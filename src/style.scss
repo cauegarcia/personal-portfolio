@@ -4,6 +4,8 @@ $blue-color: #69d2e7;
 $orange-color: #f38630;
 $primary-font: "Open Sans", sans-serif;
 $secondary-font: "Playfair Display", serif;
+$thin-border: 5px solid $dark-color;
+$thick-border: 8px solid $dark-color;
 
 //Mixins
 @mixin tablet {
@@ -104,20 +106,17 @@ h4 {
   h4 {
     font-size: 1.25rem;
   }
-  a {
-    font-size: 1.5rem;
-  }
 }
 
 //General Classes
 .border-black {
-  border-right: 5px solid $dark-color;
-  border-left: 5px solid $dark-color;
-  border-bottom: 5px solid $dark-color;
+  border-right: $thin-border;
+  border-left: $thin-border;
+  border-bottom: $thin-border;
   @include tablet {
-    border-right: 10px solid $dark-color;
-    border-left: 10px solid $dark-color;
-    border-bottom: 10px solid $dark-color;
+    border-right: $thick-border;
+    border-left: $thick-border;
+    border-bottom: $thick-border;
   }
 }
 .flex {
@@ -169,15 +168,15 @@ h4 {
   position: fixed !important;
   top: 10vh;
   left: 0;
-  border-left: 5px solid $dark-color;
-  border-right: 5px solid $dark-color;
+  border-left: $thin-border;
+  border-right: $thin-border;
   z-index: 2;
   @include tablet {
-    border-left: 10px solid $dark-color;
-    border-right: 10px solid $dark-color;
+    border-left: $thick-border;
+    border-right: $thick-border;
   }
   @include desktop {
-    border-bottom: 10px solid $dark-color !important;
+    border-bottom: $thick-border !important;
   }
 }
 .absolute-name {
@@ -196,23 +195,23 @@ h4 {
 .container {
   width: 100%;
   min-height: 100vh;
-  nav {
+  .nav-header {
     width: 100%;
     height: 10vh;
-    border-top: 5px solid $dark-color;
+    border-top: $thin-border;
     position: fixed;
     z-index: 10;
     justify-content: space-between;
     background: $light-color;
     @include tablet {
-      border-top: 10px solid $dark-color;
+      border-top: $thick-border;
     }
     .logo-div {
       height: 100%;
       width: 10vh;
-      border-right: 5px solid $dark-color;
+      border-right: $thin-border;
       @include tablet {
-        border-right: 10px solid $dark-color;
+        border-right: $thick-border;
       }
       img {
         width: 100%;
@@ -261,9 +260,9 @@ h4 {
     .switcher {
       height: 100%;
       width: 10vh;
-      border-left: 5px solid $dark-color;
+      border-left: $thin-border;
       @include tablet {
-        border-left: 10px solid $dark-color;
+        border-left: $thick-border;
       }
       i {
         color: $dark-color;
@@ -290,18 +289,27 @@ h4 {
       flex-direction: column;
       align-items: flex-start;
       padding: 0.5rem;
+      position: relative;
       @include tablet {
         padding: 2rem;
       }
       @include desktop {
         margin-left: 3vw;
       }
-      h1 {
+      .presentation {
+        font-size: 1.2rem;
+        line-height: 1.75;
+        span {
+          font-size: 1.75rem;
+        }
         @include tablet {
+          font-size: 2rem;
           width: 80%;
+          span {
+            font-size: 3rem;
+          }
         }
         @include desktop {
-          width: 95%;
           max-width: 1000px;
         }
       }
@@ -314,33 +322,48 @@ h4 {
           margin-top: 1rem;
         }
       }
+      .logo-home {
+        position: absolute;
+        bottom: 3%;
+        right: 5%;
+        width: 20vw;
+        @include desktop {
+          width: 15vw;
+          bottom: -10%;
+          right: 10%;
+        }
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
     }
     .photo {
       height: 30vh;
-      border-top: 5px solid $dark-color;
+      border-top: $thin-border;
       @include tablet {
-        border-top: 10px solid $dark-color;
+        border-top: $thick-border;
       }
       @include desktop {
         border-top: none;
-        border-left: 10px solid $dark-color;
+        border-left: $thick-border;
         height: 90vh;
         width: 30%;
       }
       width: 100%;
       img {
         height: 100%;
-        border-right: 5px solid $dark-color;
-        border-left: 5px solid $dark-color;
+        border-right: $thin-border;
+        border-left: $thin-border;
         @include tablet {
-          border-right: 10px solid $dark-color;
-          border-left: 10px solid $dark-color;
+          border-right: $thick-border;
+          border-left: $thick-border;
         }
         @include desktop {
           border-right: none;
           border-left: none;
-          border-top: 10px solid $dark-color;
-          border-bottom: 10px solid $dark-color;
+          border-top: $thick-border;
+          border-bottom: $thick-border;
           width: 100%;
           height: auto;
         }
@@ -350,9 +373,9 @@ h4 {
   aside {
     width: 10vh;
     height: 90vh;
-    border-left: 5px solid $dark-color;
+    border-left: $thin-border;
     @include tablet {
-      border-left: 10px solid $dark-color;
+      border-left: $thick-border;
     }
     ul {
       li {
@@ -378,18 +401,18 @@ h4 {
     width: 100%;
   }
   .name {
-    border-bottom: 5px solid $dark-color;
+    border-bottom: $thin-border;
     height: 25vh;
     background: $light-color;
     z-index: 2;
     @include tablet {
-      border-bottom: 10px solid $dark-color;
+      border-bottom: $thick-border;
       height: 35vh;
     }
     @include desktop {
       height: 90vh;
       width: 50%;
-      border-right: 10px solid $dark-color;
+      border-right: $thick-border;
       border-bottom: none;
     }
   }
@@ -475,9 +498,9 @@ h4 {
       z-index: 4;
       width: 30vw;
       height: calc(#{width} * 1.4375);
-      border: 5px solid $dark-color;
+      border: $thin-border;
       @include tablet {
-        border: 10px solid $dark-color;
+        border: $thick-border;
       }
       @include desktop {
         width: 20vw;
@@ -521,18 +544,20 @@ h4 {
 .contact {
   @extend .projects;
   .content {
-    padding: 4vh 1rem;
-
+    padding: 6vh 1rem;
+    @include desktop {
+      padding: 0 10vw;
+    }
+    @include tablet {
+      max-width: 50%;
+    }
     form {
-      @include tablet {
-        max-width: 50%;
-      }
       @include desktop {
-        max-width: 60%;
+        max-width: 80%;
       }
       .form-group {
         position: relative;
-        padding: 3vh 0;
+        padding: 2vh 0;
       }
       .form-label {
         position: absolute;
@@ -556,7 +581,7 @@ h4 {
         }
         &:placeholder-shown ~ .form-label {
           cursor: text;
-          top: 4vh;
+          top: 2vh;
         }
       }
       .form-input {
@@ -578,8 +603,6 @@ h4 {
       .form-input:focus {
         padding-bottom: 6px;
         border-width: 3px;
-        border-image: linear-gradient(to right, $dark-color, $light-color);
-        border-image-slice: 1;
       }
       .form-input,
       .form-textarea {
@@ -593,6 +616,67 @@ h4 {
         font-family: inherit;
         background: $orange-color;
         cursor: pointer;
+      }
+    }
+  }
+}
+
+//footer
+.footer {
+  width: 100%;
+  padding: 7vw 4vh;
+  position: relative;
+  @include tablet {
+    padding: 3vw 4vh;
+  }
+  @include desktop {
+    padding: 3vw 10vw;
+  }
+  .nav-footer {
+    ul {
+      width: 100%;
+      flex-wrap: wrap;
+      li {
+        display: block;
+        width: 50%;
+        margin: 2vh 0;
+        &:nth-child(even) a {
+          float: right;
+        }
+      }
+    }
+  }
+  .logo-footer {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30vw;
+    @include tablet {
+      width: 20vw;
+    }
+    @include desktop {
+      width: 12vw;
+      top: 35%;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .social-icons {
+    width: 70%;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-top: 3vh;
+    @include desktop {
+      width: 50%;
+    }
+    a > i {
+      font-size: 2rem;
+      margin-left: 5px;
+      @include tablet {
+        font-size: 2.5rem;
       }
     }
   }
