@@ -20,20 +20,24 @@
     <div class="container">
       <nav class="border-black flex nav-header" id="nav">
         <div class="logo-div flex">
-          <img src="./src/images/CM-logo.png" alt="logo" />
+          <a href="#home"><img src="./src/images/CM-logo.png" alt="logo" /></a>
         </div>
-        <div class="burger-menu flex">
+        <div class="burger-menu flex" id="burger-btn">
           <div class="line1"></div>
           <div class="line2"></div>
           <div class="line3"></div>
         </div>
-        <ul class="nav-links">
+        <ul class="nav-links flex" id="menu">
+          <div class="close-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+          </div>
           <li><a href="#home">HOME</a></li>
           <li><a href="#projects">PROJECTS</a></li>
           <li><a href="#about">ABOUT</a></li>
           <li><a href="#">CV</a></li>
         </ul>
-        <div class="switcher flex">
+        <div class="switcher flex" id="switcher">
           <i class="fas fa-moon"></i>
         </div>
       </nav>
@@ -46,7 +50,7 @@
                 I’m <span>Caue Moyano</span>, a Web Developer and UX/UI Designer
                 based in the UK.
               </h1>
-              <div class="btn"><a href="#projects">PROJECTS</a></div>
+              <a class="btn red-button" href="#projects">PROJECTS</a>
               <div class="logo-home">
                 <img src="./src/images/CM-logo-brown.png" alt="logo" />
               </div>
@@ -157,7 +161,7 @@
         <section class="about flex border-black" id="about">
           <article class="name flex">
             <h1>About</h1>
-            <div class="portrait">
+            <div class="portrait flex">
               <img src="./src/images/headshot.jpg" alt="portrait" />
             </div>
           </article>

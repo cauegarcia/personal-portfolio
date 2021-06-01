@@ -90,8 +90,7 @@ const setUpSettings = () => {
     }
   };
 
-  //handle section fixing
-  window.addEventListener("scroll", () => {
+  const checkSectionDisplaying = () => {
     const intViewportHeight = window.innerHeight;
     const projectsTop = document
       .getElementById("projects")
@@ -117,7 +116,10 @@ const setUpSettings = () => {
     ) {
       applyPositionOnSection("about");
     }
-  });
+  };
+
+  //handle section fixing
+  window.addEventListener("scroll", checkSectionDisplaying);
 
   //handle form
   const form = document.getElementById("contact-form");
@@ -130,6 +132,27 @@ const setUpSettings = () => {
     name.value = "";
     email.value = "";
     message.value = "";
+  });
+
+  //handle burger menu
+  const burgerBtn = document.getElementById("burger-btn");
+  burgerBtn.addEventListener("click", () => {
+    const nav = document.getElementById("nav");
+    nav.classList.toggle("show-menu");
+  });
+  const menu = document.getElementById("menu");
+  menu.querySelectorAll("li").forEach((li) => {
+    li.addEventListener("click", () => {
+      checkSectionDisplaying();
+      const nav = document.getElementById("nav");
+      nav.classList.remove("show-menu");
+    });
+  });
+
+  //handle light dark color toggler
+  const switcher = document.getElementById("switcher");
+  switcher.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
   });
 };
 const initialize = (() => {
