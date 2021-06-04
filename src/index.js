@@ -7,7 +7,12 @@ const setUpSettings = () => {
     const intViewportHeight = window.innerHeight;
     const intViewportWidth = window.innerWidth;
 
-    if (section.offsetHeight < intViewportHeight * 1.1) return;
+    if (section.offsetHeight < intViewportHeight * 1.1) {
+      if (intViewportWidth >= 1024) {
+        section.firstElementChild.style.height = `${section.lastElementChild.offsetHeight}px`;
+      }
+      return;
+    }
     const sectionNameHeight = section.firstElementChild.offsetHeight;
     sectionTop = section.getBoundingClientRect().top;
     sectionBottom = section.getBoundingClientRect().bottom;
@@ -123,36 +128,63 @@ const setUpSettings = () => {
 
   //handle form
   const form = document.getElementById("contact-form");
+  const status = document.getElementById("status");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const message = document.getElementById("message");
-    console.log(name, email, message);
-    name.value = "";
-    email.value = "";
-    message.value = "";
+
+    let data = new FormData(e.target);
+    fetch(e.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        status.innerHTML = "Thanks for your message.";
+        form.reset();
+      })
+      .catch((error) => {
+        status.innerHTML =
+          "Sorry, an error ocurred. Contact me through my email moyanocaue@gmail.com";
+        form.reset();
+      });
+    setTimeout(() => {
+      status.innerHTML = "";
+    }, 3000);
   });
 
   //handle burger menu
   const burgerBtn = document.getElementById("burger-btn");
+  const nav = document.getElementById("nav");
   burgerBtn.addEventListener("click", () => {
-    const nav = document.getElementById("nav");
     nav.classList.toggle("show-menu");
+    burgerBtn.classList.toggle("close-menu");
   });
   const menu = document.getElementById("menu");
   menu.querySelectorAll("li").forEach((li) => {
     li.addEventListener("click", () => {
       checkSectionDisplaying();
-      const nav = document.getElementById("nav");
       nav.classList.remove("show-menu");
+      burgerBtn.classList.remove("close-menu");
     });
   });
 
   //handle light dark color toggler
   const switcher = document.getElementById("switcher");
+  const logosBig = document.querySelectorAll(".logoBig");
+  const logoNav = document.querySelector(".logoNav");
   switcher.addEventListener("click", () => {
     document.body.classList.toggle("dark");
+    if (document.body.classList.contains("dark")) {
+      logosBig.forEach(
+        (logo) => (logo.src = "./src/images/CM-logo-silver.png")
+      );
+      logoNav.src = "./src/images/CM-logo-white.png";
+    } else {
+      logosBig.forEach((logo) => (logo.src = "./src/images/CM-logo-brown.png"));
+      logoNav.src = "./src/images/CM-logo.png";
+    }
   });
 };
 const initialize = (() => {
@@ -160,4 +192,24 @@ const initialize = (() => {
   window.addEventListener("resize", () => {
     setUpSettings();
   });
+
+  //type effect on homepage
+  const hello = document.querySelector(".hello");
+  const cursor = document.querySelector(".cursor");
+  const text = "Hello,";
+  const typingdelay = 300;
+  let charCounter = 0;
+  const type = () => {
+    if (charCounter < text.length) {
+      hello.textContent += text.charAt(charCounter);
+      charCounter++;
+      setTimeout(type, typingdelay);
+    }
+    if (charCounter === text.length) {
+      setTimeout(() => {
+        cursor.classList.add("cursor-fade");
+      }, 1000);
+    }
+  };
+  type();
 })();
