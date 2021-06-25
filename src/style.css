@@ -276,6 +276,10 @@ h4 {
   }
 }
 
+.container .nav-header .logo-div a {
+  margin-bottom: auto;
+}
+
 .container .nav-header .logo-div img {
   width: 100%;
   padding: 5px;
@@ -376,7 +380,7 @@ h4 {
             flex-direction: row;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    width: 50%;
+    width: 70%;
   }
 }
 
@@ -385,7 +389,7 @@ h4 {
   position: relative;
 }
 
-.container .nav-header .nav-links li::after {
+.container .nav-header .nav-links li:not(:last-child):after {
   content: "";
   position: absolute;
   bottom: -15%;
@@ -408,6 +412,26 @@ h4 {
           transform: scale(1) translateX(-50%);
 }
 
+.container .nav-header .nav-links li:last-child {
+  background: var(--secondary-color);
+  padding: 0 10px;
+  border: 3px solid var(--secondary-color);
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.container .nav-header .nav-links li:last-child a {
+  color: var(--primary-color);
+}
+
+.container .nav-header .nav-links li:last-child:hover {
+  background: var(--primary-color);
+}
+
+.container .nav-header .nav-links li:last-child:hover a {
+  color: var(--secondary-color);
+}
+
 .container .nav-header .switcher {
   height: 100%;
   width: 10vh;
@@ -426,7 +450,7 @@ h4 {
   background: transparent;
   border: none;
   width: 100%;
-  height: 10vh;
+  height: 9vh;
   cursor: pointer;
 }
 
@@ -446,7 +470,7 @@ h4 {
 }
 
 .container .show-menu {
-  height: 35vh;
+  height: 40vh;
 }
 
 .home {
@@ -830,6 +854,12 @@ h4 {
 
 .about .name {
   position: relative;
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .about .name {
+    min-height: 90vh;
+  }
 }
 
 .about .name h1 {
