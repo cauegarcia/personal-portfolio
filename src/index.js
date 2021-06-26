@@ -1,8 +1,28 @@
+import "./style.css";
+import headshot from "./images/headshot.jpg";
+import homeBg from "./images/image-home-bg.png";
+import cmLogoBlack from "./images/CM-logo.png";
+import cmLogoWhite from "./images/CM-logo-white.png";
+import cmLogoBrown from "./images/CM-logo-brown.png";
+import cmLogoSilver from "./images/CM-logo-silver.png";
+import resaElectronics from "./images/resa-electronics.png";
+import footballScore from "./images/football-score.png";
+import mapleBear from "./images/maple-bear.png";
+
+document.getElementById("CM-logo").src = cmLogoBlack;
+document.getElementById("logoHome").src = cmLogoBrown;
+document.getElementById("logoFooter").src = cmLogoBrown;
+document.getElementById("home-bg").src = homeBg;
+document.getElementById("resa-electronics").src = resaElectronics;
+document.getElementById("footballScore").src = footballScore;
+document.getElementById("mapleBear").src = mapleBear;
+document.getElementById("headshot").src = headshot;
+
 const setUpSettings = () => {
   const navHeight = document.getElementById("nav").offsetHeight;
   let yoffset = window.pageYOffset;
   const applyPositionOnSection = (sectionToApply) => {
-    newYoffset = window.pageYOffset;
+    let newYoffset = window.pageYOffset;
     const section = document.getElementById(sectionToApply);
     const intViewportHeight = window.innerHeight;
     const intViewportWidth = window.innerWidth;
@@ -14,14 +34,14 @@ const setUpSettings = () => {
       return;
     }
     const sectionNameHeight = section.firstElementChild.offsetHeight;
-    sectionTop = section.getBoundingClientRect().top;
-    sectionBottom = section.getBoundingClientRect().bottom;
-    sectionNameRight = section.getBoundingClientRect().right;
-    sectionFirstChildTop =
+    const sectionTop = section.getBoundingClientRect().top;
+    const sectionBottom = section.getBoundingClientRect().bottom;
+    const sectionNameRight = section.getBoundingClientRect().right;
+    const sectionFirstChildTop =
       section.lastElementChild.firstElementChild.getBoundingClientRect().top;
-    sectionLastChildTop =
+    const sectionLastChildTop =
       section.lastElementChild.lastElementChild.getBoundingClientRect().top;
-    sectionLastChildBottom =
+    const sectionLastChildBottom =
       section.lastElementChild.lastElementChild.getBoundingClientRect().bottom;
     //control margin-auto
     if (sectionTop <= 0 && intViewportWidth >= 1024) {
@@ -177,13 +197,11 @@ const setUpSettings = () => {
   switcher.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     if (document.body.classList.contains("dark")) {
-      logosBig.forEach(
-        (logo) => (logo.src = "./src/images/CM-logo-silver.png")
-      );
-      logoNav.src = "./src/images/CM-logo-white.png";
+      logosBig.forEach((logo) => (logo.src = cmLogoSilver));
+      logoNav.src = cmLogoWhite;
     } else {
-      logosBig.forEach((logo) => (logo.src = "./src/images/CM-logo-brown.png"));
-      logoNav.src = "./src/images/CM-logo.png";
+      logosBig.forEach((logo) => (logo.src = cmLogoBrown));
+      logoNav.src = cmLogoBlack;
     }
   });
 };

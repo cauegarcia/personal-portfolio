@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Caue Moyano - Web Developer</title>
-    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="../src/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@400;600&display=swap"
@@ -23,7 +23,7 @@
       <nav class="border-black flex nav-header" id="nav">
         <div class="logo-div flex">
           <a href="#home" class="margin-bottom-auto"
-            ><img src="./src/images/CM-logo.png" alt="logo" class="logoNav"
+            ><img id="CM-logo" alt="logo" class="logoNav"
           /></a>
         </div>
         <div class="burger-menu flex" id="burger-btn">
@@ -66,18 +66,11 @@
               </h1>
               <a class="btn red-button" href="#projects">PROJECTS</a>
               <div class="logo-home">
-                <img
-                  src="./src/images/CM-logo-brown.png"
-                  alt="logo"
-                  class="logoBig"
-                />
+                <img id="logoHome" alt="logo" class="logoBig" />
               </div>
             </div>
             <div class="photo flex">
-              <img
-                src="./src/images/image-home-bg.png"
-                alt="image background"
-              />
+              <img id="home-bg" alt="image background" />
             </div>
           </article>
           <aside class="flex">
@@ -111,7 +104,7 @@
               <h2>RESA Electronics</h2>
               <div class="description flex">
                 <img
-                  src="./src/images/resa-electronics.png"
+                  id="resa-electronics"
                   alt="Resa Electronics website image"
                 />
                 <div class="details flex">
@@ -141,10 +134,7 @@
             <div class="single-project flex">
               <h2>Football Score</h2>
               <div class="description flex">
-                <img
-                  src="./src/images/football-score.png"
-                  alt="Football Score website image"
-                />
+                <img id="footballScore" alt="Football Score website image" />
                 <div class="details flex">
                   <p>
                     A web app that provides the latest results and scheduled
@@ -173,10 +163,7 @@
             <div class="single-project flex">
               <h2>Maple Bear Adventures</h2>
               <div class="description flex">
-                <img
-                  src="./src/images/maple-bear.png"
-                  alt="Maple Bear Adventures website image"
-                />
+                <img id="mapleBear" alt="Maple Bear Adventures website image" />
                 <div class="details flex">
                   <p>
                     It is a website for a fictional adventure agency which
@@ -207,7 +194,7 @@
           <article class="name flex">
             <h1>About</h1>
             <div class="portrait flex">
-              <img src="./src/images/headshot.jpg" alt="portrait" />
+              <img id="headshot" alt="portrait" />
             </div>
           </article>
           <article class="content">
@@ -296,11 +283,7 @@
           </ul>
         </nav>
         <div class="logo-footer">
-          <img
-            src="./src/images/CM-logo-brown.png"
-            alt="logo"
-            class="logoBig"
-          />
+          <img id="logoFooter" alt="logo" class="logoBig" />
         </div>
         <ul class="social-icons flex">
           <li>
@@ -323,6 +306,6 @@
         </ul>
       </footer>
     </div>
-    <script src="./dist/main.js"></script>
+    <script src="/main.js"></script>
   </body>
 </html>
