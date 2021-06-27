@@ -1,5 +1,3 @@
-import "./style.css";
-
 import headshot from "./images/headshot.jpg";
 import homeBg from "./images/image-home-bg.png";
 import cmLogoBlack from "./images/cmLogoBlack.png";
@@ -211,9 +209,9 @@ const initialize = (() => {
   window.addEventListener("resize", () => {
     setUpSettings();
   });
-
+  console.log("nvsoivnd");
   //type effect on homepage
-  const hello = document.querySelector(".hello");
+  /*  const hello = document.querySelector(".hello");
   const cursor = document.querySelector(".cursor");
   const text = "Hello,";
   const typingdelay = 300;
@@ -230,5 +228,5 @@ const initialize = (() => {
       }, 1000);
     }
   };
-  type();
+  type(); */
 })();
