@@ -1,22 +1,14 @@
 import "./style.css";
+
 import headshot from "./images/headshot.jpg";
 import homeBg from "./images/image-home-bg.png";
-import cmLogoBlack from "./images/CM-logo.png";
-import cmLogoWhite from "./images/CM-logo-white.png";
+import cmLogoBlack from "./images/cmLogoBlack.png";
+import cmLogoWhite from "./images/cmLogoWhite.png";
 import cmLogoBrown from "./images/CM-logo-brown.png";
 import cmLogoSilver from "./images/CM-logo-silver.png";
 import resaElectronics from "./images/resa-electronics.png";
 import footballScore from "./images/football-score.png";
 import mapleBear from "./images/maple-bear.png";
-
-document.getElementById("CM-logo").src = cmLogoBlack;
-document.getElementById("logoHome").src = cmLogoBrown;
-document.getElementById("logoFooter").src = cmLogoBrown;
-document.getElementById("home-bg").src = homeBg;
-document.getElementById("resa-electronics").src = resaElectronics;
-document.getElementById("footballScore").src = footballScore;
-document.getElementById("mapleBear").src = mapleBear;
-document.getElementById("headshot").src = headshot;
 
 const setUpSettings = () => {
   const navHeight = document.getElementById("nav").offsetHeight;
@@ -206,6 +198,15 @@ const setUpSettings = () => {
   });
 };
 const initialize = (() => {
+  document.getElementById("CM-logo").src = cmLogoBlack;
+  document.getElementById("logoHome").src = cmLogoBrown;
+  document.getElementById("logoFooter").src = cmLogoBrown;
+  document.getElementById("home-bg").src = homeBg;
+  document.getElementById("resa-electronics").src = resaElectronics;
+  document.getElementById("footballScore").src = footballScore;
+  document.getElementById("mapleBear").src = mapleBear;
+  document.getElementById("headshot").src = headshot;
+
   setUpSettings();
   window.addEventListener("resize", () => {
     setUpSettings();
