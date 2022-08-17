@@ -195,12 +195,13 @@ const setUpSettings = () => {
     }
   });
 };
-const initialize = (() => {
+(() => {
   document.getElementById("CM-logo").src = cmLogoBlack;
   document.getElementById("logoHome").src = cmLogoBrown;
   document.getElementById("logoFooter").src = cmLogoBrown;
   document.getElementById("home-bg").src = homeBg;
   document.getElementById("resa-electronics").src = resaElectronics;
+  console.log(document.getElementById("drinksHub"));
   document.getElementById("drinksHub").src = drinksHub;
   document.getElementById("mapleBear").src = mapleBear;
   document.getElementById("headshot").src = headshot;
@@ -210,7 +211,7 @@ const initialize = (() => {
     setUpSettings();
   });
   //type effect on homepage
-  /*  const hello = document.querySelector(".hello");
+  const hello = document.querySelector(".hello");
   const cursor = document.querySelector(".cursor");
   const text = "Hello,";
   const typingdelay = 300;
@@ -227,5 +228,5 @@ const initialize = (() => {
       }, 1000);
     }
   };
-  type(); */
+  type();
 })();
