@@ -201,7 +201,6 @@ const setUpSettings = () => {
   document.getElementById("logoFooter").src = cmLogoBrown;
   document.getElementById("home-bg").src = homeBg;
   document.getElementById("resa-electronics").src = resaElectronics;
-  console.log(document.getElementById("drinksHub"));
   document.getElementById("drinksHub").src = drinksHub;
   document.getElementById("mapleBear").src = mapleBear;
   document.getElementById("headshot").src = headshot;
