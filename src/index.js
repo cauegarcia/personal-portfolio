@@ -195,7 +195,7 @@ const setUpSettings = () => {
     }
   });
 };
-(() => {
+const initialize = (() => {
   document.getElementById("CM-logo").src = cmLogoBlack;
   document.getElementById("logoHome").src = cmLogoBrown;
   document.getElementById("logoFooter").src = cmLogoBrown;
@@ -209,7 +209,6 @@ const setUpSettings = () => {
   window.addEventListener("resize", () => {
     setUpSettings();
   });
-  console.log("nvsoivnd");
   //type effect on homepage
   /*  const hello = document.querySelector(".hello");
   const cursor = document.querySelector(".cursor");
