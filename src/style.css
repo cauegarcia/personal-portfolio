@@ -510,8 +510,12 @@ h4 {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0.5rem;
   position: relative;
+  height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -529,6 +533,8 @@ h4 {
 .home article .content .presentation {
   font-size: 1.2rem;
   line-height: 1.75;
+  position: relative;
+  z-index: 1;
 }
 
 .home article .content .presentation .cursor {
@@ -610,7 +616,7 @@ h4 {
 
 .home article .content .logo-home {
   position: absolute;
-  bottom: 3%;
+  bottom: 5%;
   right: 5%;
   width: 20vw;
 }
@@ -618,8 +624,8 @@ h4 {
 @media (min-width: 1024px) and (orientation: landscape) {
   .home article .content .logo-home {
     width: 15vw;
-    bottom: -10%;
-    right: 10%;
+    bottom: 5%;
+    right: 5%;
   }
 }
 
