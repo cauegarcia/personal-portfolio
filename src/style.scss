@@ -306,7 +306,7 @@ h4 {
       li {
         margin: 1vh 0;
         position: relative;
-        &:not(:last-child):after {
+        &:after {
           content: "";
           position: absolute;
           bottom: -15%;
@@ -320,21 +320,6 @@ h4 {
         }
         &:hover::after {
           transform: scale(1) translateX(-50%);
-        }
-        &:last-child {
-          background: var(--secondary-color);
-          padding: 0 10px;
-          border: 3px solid var(--secondary-color);
-          transition: all 0.3s ease-out;
-          a {
-            color: var(--primary-color);
-          }
-          &:hover {
-            background: var(--primary-color);
-            a {
-              color: var(--secondary-color);
-            }
-          }
         }
       }
     }
